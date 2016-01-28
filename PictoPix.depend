@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1454002251 source:/home/alvaro/sfml/PictoPix/main.cpp
+	<SFML/Graphics.hpp>
+
