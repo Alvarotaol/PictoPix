@@ -13,6 +13,8 @@ Game::Game(int _largura, int _altura, std::string _titulo){
 }
 
 void Game::run(){
+// TODO (alvaro#1#): Adicionar erro caso não haja um GameState corrente.
+    corrente->iniciar(&telaJogo);
     while(telaJogo.isOpen()){
         Event e;
         while(telaJogo.pollEvent(e)){
@@ -20,11 +22,25 @@ void Game::run(){
                 telaJogo.close();
         }
 
-        telaJogo.clear();
         Clock c;
-        atualizar(c.restart().asMilliseconds());
-        renderizar();
+        corrente->atualizar(&telaJogo, c.restart().asMilliseconds());
+        corrente->renderizar(&telaJogo);
         telaJogo.display();
     }
-
 }
+
+void Game::addState(GameState* gs){
+    if(estados.empty()) corrente = gs;
+    estados[gs->getId()] = gs;
+}
+
+void Game::changeState(GameState* gs){
+// TODO (alvaro#1#): Adicionar erro caso o GameState passado não esteja no Game
+    corrente = estados[gs->getId()];
+    corrente->iniciar(&telaJogo);
+}
+
+RenderWindow* Game::getWindow(){
+    return &telaJogo;
+}
+

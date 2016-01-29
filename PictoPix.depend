@@ -1,4 +1,28 @@
 # depslib dependency file v1.0
-1454002251 source:/home/alvaro/sfml/PictoPix/main.cpp
-	<SFML/Graphics.hpp>
+1454030882 source:/home/alvaro/sfml/PictoPix/main.cpp
+	"IdEstados.h"
+
+1454030855 /home/alvaro/sfml/PictoPix/include/IdEstados.h
+	"Game.h"
+	"MenuState.h"
+
+1454030499 /home/alvaro/sfml/PictoPix/include/Game.h
+	"GameState.h"
+	<iostream>
+	<map>
+
+1454029428 /home/alvaro/sfml/PictoPix/include/GameState.h
+	"SFML/Graphics.hpp"
+
+1454029352 /home/alvaro/sfml/PictoPix/include/MenuState.h
+	<GameState.h>
+
+1454031129 source:/home/alvaro/sfml/PictoPix/src/Game.cpp
+	"Game.h"
+
+1454028357 source:/home/alvaro/sfml/PictoPix/src/GameState.cpp
+	"GameState.h"
+
+1454029134 source:/home/alvaro/sfml/PictoPix/src/MenuState.cpp
+	"MenuState.h"
 

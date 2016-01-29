@@ -1,8 +1,10 @@
-#include "Game.h"
+#include "IdEstados.h"
 int main()
 {
-    Game teste(1000, 500, "Título");
 
+    Game teste(300, 500);
+    MenuState menu(IdMenu);
+    teste.addState(&menu);
     teste.run();
     return 0;
 }
