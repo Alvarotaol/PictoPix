@@ -2,7 +2,7 @@
 int main()
 {
 
-    Game teste(300, 500);
+    Game teste(500, 500);
     MenuState menu(IdMenu);
     teste.addState(&menu);
     teste.run();

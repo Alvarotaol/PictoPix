@@ -5,6 +5,7 @@
 		<Option title="PictoPix" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Resources/;" />
 		<Build>
 			<Target title="Release">
 				<Option output="bin/Release/PictoPix" prefix_auto="1" extension_auto="1" />
@@ -28,6 +29,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="COPRGTB.TTF" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/GameState.h" />
 		<Unit filename="include/IdEstados.h" />

@@ -2,6 +2,8 @@
 #define MENUSTATE_H
 
 #include <GameState.h>
+#include <ItemMenu.h>
+#include <string>
 using namespace sf;
 
 class MenuState : public GameState
@@ -13,9 +15,10 @@ class MenuState : public GameState
         void renderizar(RenderWindow* tj);
     protected:
     private:
-        RectangleShape retJogar;
-        RectangleShape retEditor;
-        RectangleShape retSair;
+        static const int afast = 30, larg = 200, alt = 40, nBots = 3;
+        ItemMenu retJogar, retEditor, retSair;
+        Font fonte;
+        Text txtJogar, txtEditor, txtSair;
 };
 
 #endif // MENUSTATE_H
