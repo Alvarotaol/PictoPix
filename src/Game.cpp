@@ -2,30 +2,30 @@
 using namespace sf;
 Game::Game()
 {
-    telaJogo.create(VideoMode(800, 600), "");
+    create(VideoMode(800, 600), "");
 }
 Game::Game(int _largura, int _altura){
-    telaJogo.create(VideoMode(_largura, _altura), "");
+    create(VideoMode(_largura, _altura), "");
 }
 
 Game::Game(int _largura, int _altura, std::string _titulo){
-    telaJogo.create(VideoMode(_largura, _altura), _titulo);
+    create(VideoMode(_largura, _altura), _titulo);
 }
 
 void Game::run(){
 // TODO (alvaro#1#): Adicionar erro caso não haja um GameState corrente.
-    corrente->iniciar(&telaJogo);
-    while(telaJogo.isOpen()){
+    corrente->iniciar(this);
+    while(isOpen()){
         Event e;
-        while(telaJogo.pollEvent(e)){
+        while(pollEvent(e)){
             if (e.type == Event::Closed)
-                telaJogo.close();
+                close();
         }
 
         Clock c;
-        corrente->atualizar(&telaJogo, c.restart().asMilliseconds());
-        corrente->renderizar(&telaJogo);
-        telaJogo.display();
+        corrente->atualizar(this, c.restart().asMilliseconds());
+        corrente->renderizar(this);
+        display();
     }
 }
 
@@ -34,13 +34,9 @@ void Game::addState(GameState* gs){
     estados[gs->getId()] = gs;
 }
 
-void Game::changeState(GameState* gs){
+void Game::changeState(int _id){
 // TODO (alvaro#1#): Adicionar erro caso o GameState passado não esteja no Game
-    corrente = estados[gs->getId()];
-    corrente->iniciar(&telaJogo);
-}
-
-RenderWindow* Game::getWindow(){
-    return &telaJogo;
+    corrente = estados[_id];
+    corrente->iniciar(this);
 }
 

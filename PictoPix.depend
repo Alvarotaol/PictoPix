@@ -1,31 +1,34 @@
 # depslib dependency file v1.0
-1454089792 source:/home/alvaro/sfml/PictoPix/main.cpp
+1454258614 source:/home/alvaro/sfml/PictoPix/main.cpp
 	"IdEstados.h"
-
-1454030855 /home/alvaro/sfml/PictoPix/include/IdEstados.h
 	"Game.h"
 	"MenuState.h"
+	"EditorState.h"
 
-1454030499 /home/alvaro/sfml/PictoPix/include/Game.h
-	"GameState.h"
+1454258573 /home/alvaro/sfml/PictoPix/include/IdEstados.h
+
+1454258416 /home/alvaro/sfml/PictoPix/include/Game.h
 	<iostream>
 	<map>
-
-1454029428 /home/alvaro/sfml/PictoPix/include/GameState.h
 	"SFML/Graphics.hpp"
+	"GameState.h"
 
-1454093436 /home/alvaro/sfml/PictoPix/include/MenuState.h
+1454258145 /home/alvaro/sfml/PictoPix/include/GameState.h
+	"Game.h"
+
+1454258378 /home/alvaro/sfml/PictoPix/include/MenuState.h
 	<GameState.h>
 	<ItemMenu.h>
-	<string>
+	"Game.h"
+	"IdEstados.h"
 
-1454031129 source:/home/alvaro/sfml/PictoPix/src/Game.cpp
+1454257150 source:/home/alvaro/sfml/PictoPix/src/Game.cpp
 	"Game.h"
 
 1454028357 source:/home/alvaro/sfml/PictoPix/src/GameState.cpp
 	"GameState.h"
 
-1454157100 source:/home/alvaro/sfml/PictoPix/src/MenuState.cpp
+1454258502 source:/home/alvaro/sfml/PictoPix/src/MenuState.cpp
 	"MenuState.h"
 
 1454156894 /home/alvaro/sfml/PictoPix/include/ItemMenu.h
@@ -33,4 +36,18 @@
 
 1454156971 source:/home/alvaro/sfml/PictoPix/src/ItemMenu.cpp
 	"ItemMenu.h"
+
+1454267312 /home/alvaro/sfml/PictoPix/include/EditorState.h
+	<GameState.h>
+	<EditorPic.h>
+
+1454267714 source:/home/alvaro/sfml/PictoPix/src/EditorState.cpp
+	"EditorState.h"
+
+1454268905 source:/home/alvaro/sfml/PictoPix/src/EditorPic.cpp
+	"EditorPic.h"
+
+1454268905 /home/alvaro/sfml/PictoPix/include/EditorPic.h
+	<SFML/Graphics.hpp>
+	<vector>
 

@@ -6,7 +6,7 @@ MenuState::MenuState(int _id):GameState(_id)
 
 }
 
-void MenuState::atualizar(RenderWindow* tj, int ms){
+void MenuState::atualizar(Game* tj, int ms){
 
     //Botão jogar
     if(retJogar.contemPonto(Mouse::getPosition(*tj))){
@@ -25,7 +25,7 @@ void MenuState::atualizar(RenderWindow* tj, int ms){
         retEditor.scale(1.05f);
         if(retEditor.getScale() > 1.3) retEditor.setScale(1.3f);
         if(Mouse::isButtonPressed(Mouse::Left)){
-            tj->setTitle("Clicou editor");
+            tj->changeState(IdEditor);
         }
     } else {
         retEditor.scale(0.95f);
@@ -45,7 +45,7 @@ void MenuState::atualizar(RenderWindow* tj, int ms){
     }
 }
 
-void MenuState::iniciar(RenderWindow* tj){
+void MenuState::iniciar(Game* tj){
 
     if (!fonte.loadFromFile("COPRGTB.TTF"))
     {
@@ -70,7 +70,7 @@ void MenuState::iniciar(RenderWindow* tj){
     retSair.move(  xinic, yinic + 2*(alt + afast));
 }
 
-void MenuState::renderizar(RenderWindow* tj){
+void MenuState::renderizar(Game* tj){
     tj->clear(Color::White);
     tj->draw(retJogar);
     tj->draw(retEditor);

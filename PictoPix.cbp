@@ -30,12 +30,16 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="COPRGTB.TTF" />
+		<Unit filename="include/EditorPic.h" />
+		<Unit filename="include/EditorState.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/GameState.h" />
 		<Unit filename="include/IdEstados.h" />
 		<Unit filename="include/ItemMenu.h" />
 		<Unit filename="include/MenuState.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/EditorPic.cpp" />
+		<Unit filename="src/EditorState.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/GameState.cpp" />
 		<Unit filename="src/ItemMenu.cpp" />
